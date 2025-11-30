@@ -2,17 +2,18 @@
 #include <string>
 #include <cctype>
 /*
-Një program që analizon një fjalëkalim dhe përcakton fortësinë e tij duke kontrolluar:
+Prgram that gets a password from user and checks its strength by : 
 
-gjatësinë
+length
 
-karakteret speciale
+special characters
 
-numrat
+numbers
 
-shkronjat e mëdha/vogla
+uppercase/lowercase letters
 */
 
+// Function to evaluate length strength
 int LengthStrength(const std::string&password){
     int strength = 0;
     size_t length = password.length();
@@ -23,7 +24,7 @@ int LengthStrength(const std::string&password){
 
     return strength;
 }
-
+// Function to check for special characters
 int hasSpecialChar(const std::string &password){
     int strength = 0;
     const std::string specialCharacters = "!#$%^&*()-+?_=,<>/";
@@ -35,6 +36,7 @@ int hasSpecialChar(const std::string &password){
     return strength;
 }
 
+// Function to check for digits
 int hasDigit(const std::string &password){
     int strength = 0;
     for(char ch : password){
@@ -45,6 +47,7 @@ int hasDigit(const std::string &password){
     return strength;
 }
 
+// Function to check for uppercase letters
 int hasUpper(const std::string &password){
     int strength = 0;
     for(char ch : password){
@@ -54,7 +57,7 @@ int hasUpper(const std::string &password){
     }
     return strength;
 }
-
+// Function to check for lowercase letters
 int hasLower(const std::string &password){
     int strength = 0;
     for(char ch : password){
@@ -64,7 +67,7 @@ int hasLower(const std::string &password){
     }
     return strength;
 }
-
+// Function to calculate total strength
 int CalculateStrength(const std::string &password){
     int totalStrength = 0;
     totalStrength += LengthStrength(password);
@@ -75,6 +78,7 @@ int CalculateStrength(const std::string &password){
     return totalStrength;
 }
 
+// Main function
 int main(){
 
     std::string password;
@@ -84,7 +88,7 @@ int main(){
     int strength = CalculateStrength(password);
 
     if(strength == 0){
-        std::cout << "Shkruaj fjalekalim." << std::endl;
+        std::cout << "Shkruaj fjalekalimin." << std::endl;
     }
     else if(strength <= 8){
         std::cout << "Fjalekalimi juaj eshte shume i dobet." << std::endl;
