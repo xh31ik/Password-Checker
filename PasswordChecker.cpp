@@ -103,4 +103,7 @@ int main(){
         std::cout << "Fjalekalimi juaj eshte shume i forte." << std::endl;
     }
 
+    std::cin.get();
+    return 0;
+
 }
